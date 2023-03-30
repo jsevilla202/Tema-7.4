@@ -1,5 +1,9 @@
 package ejercicio1;
-
+/**
+ * Clase con las funciones de Alumnos
+ * @author Jaime Sevilla
+ *
+ */
 public class Alumno {
 	/**
 	 * Nombre del alumno
@@ -14,6 +18,7 @@ public class Alumno {
 	 */
 	public Alumno() {
 		super();
+		notaMedia = -1;
 	}
 	/**
 	 * Constructor con todos los parametros
