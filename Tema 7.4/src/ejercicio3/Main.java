@@ -1,5 +1,6 @@
 package ejercicio3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import ejercicio3.Pizza.Estado;
@@ -33,17 +34,22 @@ public class Main {
 				}
 				break;
 			case 2:
+				pizzas = Arrays.copyOf(pizzas, pizzas.length+1);
+				pizzas[pizzas.length-1] = new Pizza();
+				pizzas[pizzas.length-1].setCodigo(pizzas.length);
 				System.out.print("Inserte el tamaño de la Pizza (MEDIANA/GRANDE): ");
 				tamaño = sc.next();
+				tamaño = tamaño.toUpperCase();
 				pizzas[pizzas.length-1].setTamaño(Tamaño.valueOf(tamaño));
 				System.out.print("Inserte el tipo de la Pizza (MARGARITA, CUATROQUESOS, FUNGUI): ");
 				tipo = sc.next();
+				tipo = tipo.toUpperCase();
 				pizzas[pizzas.length-1].setTipo(Tipo.valueOf(tipo));
 				break;
 			case 3:
-				System.out.println("Inserte el codigo de la pizza que ha sido servida: ");
+				System.out.print("Inserte el codigo de la pizza que ha sido servida: ");
 				libre = sc.nextInt();
-				pizzas[libre].setEstado(Estado.valueOf("SERVIDA"));
+				pizzas[libre-1].setEstado(Estado.valueOf("SERVIDA"));
 				break;
 			case 4:
 				break;
