@@ -4,16 +4,14 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import ejercicio3.Pizza.Estado;
-import ejercicio3.Pizza.Tamaño;
+import ejercicio3.Pizza.Tamano;
 import ejercicio3.Pizza.Tipo;
 
 public class Main {
 
 	public static void main(String[] args) {
-		int codigo;
-		String tamaño;
+		String tamano;
 		String tipo;
-		String estado;
 		int opcion = 0;
 		int libre;
 		Pizza[] pizzas = new Pizza[0];
@@ -37,10 +35,10 @@ public class Main {
 				pizzas = Arrays.copyOf(pizzas, pizzas.length+1);
 				pizzas[pizzas.length-1] = new Pizza();
 				pizzas[pizzas.length-1].setCodigo(pizzas.length);
-				System.out.print("Inserte el tamaño de la Pizza (MEDIANA/GRANDE): ");
-				tamaño = sc.next();
-				tamaño = tamaño.toUpperCase();
-				pizzas[pizzas.length-1].setTamaño(Tamaño.valueOf(tamaño));
+				System.out.print("Inserte el tamano de la Pizza (MEDIANA/GRANDE): ");
+				tamano = sc.next();
+				tamano = tamano.toUpperCase();
+				pizzas[pizzas.length-1].setTamano(Tamano.valueOf(tamano));
 				System.out.print("Inserte el tipo de la Pizza (MARGARITA, CUATROQUESOS, FUNGUI): ");
 				tipo = sc.next();
 				tipo = tipo.toUpperCase();
